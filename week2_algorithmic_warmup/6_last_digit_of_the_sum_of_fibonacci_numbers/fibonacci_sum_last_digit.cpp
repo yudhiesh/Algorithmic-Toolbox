@@ -1,15 +1,17 @@
 #include <iostream>
+using namespace std;
 
-int fibonacci_sum_naive(long long n) {
+
+int fibonacci_sum_naive(unsigned long long n) {
     if (n <= 1)
         return n;
 
-    long long previous = 0;
-    long long current  = 1;
-    long long sum      = 1;
+    unsigned long long previous = 0;
+    unsigned long long current  = 1;
+    unsigned long long sum      = 1;
 
-    for (long long i = 0; i < n - 1; ++i) {
-        long long tmp_previous = previous;
+    for (unsigned long long i = 0; i < n - 1; ++i) {
+        unsigned long long tmp_previous = previous;
         previous = current;
         current = tmp_previous + current;
         sum += current;
@@ -19,7 +21,7 @@ int fibonacci_sum_naive(long long n) {
 }
 
 int main() {
-    long long n = 0;
-    std::cin >> n;
-    std::cout << fibonacci_sum_naive(n);
+    unsigned long long n = 0;
+    cin >> n;
+    cout << fibonacci_sum_naive(n);
 }
