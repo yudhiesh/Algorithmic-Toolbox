@@ -7,11 +7,19 @@ long long get_fibonacci_partial_sum_naive(long long from, long long to) {
 
     long long current = 0;
     long long next  = 1;
+    from = from % 60;
+    to = to % 60;
+    if (to < from ){
+      to += 60;
+    }
+    
 
     for (long long i = 0; i <= to; ++i) {
         if (i >= from) {
             sum += current;
         }
+        
+      
 
         long long new_current = next;
         next = next + current;

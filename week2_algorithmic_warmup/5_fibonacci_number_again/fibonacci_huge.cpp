@@ -19,7 +19,6 @@ vector<long long> Pisano_period(long long m){
     int i=2;
 
     while(true){
-        print_vec(pattern);
 
         pattern.push_back((pattern[i-2]+pattern[i-1])%m);
 
@@ -30,7 +29,7 @@ vector<long long> Pisano_period(long long m){
 
     //By the time we end the loop, we already added up 0, 1. So , we gotta remove it
 
-    pattern.erase (pattern.begin()+(i -2) ,pattern.begin()+i);
+     pattern.erase (pattern.begin()+(i -2) ,pattern.begin()+i);
 
      return pattern;
 
